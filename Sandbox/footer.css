@@ -1,0 +1,124 @@
+
+.footer {
+    width: 100%;
+    background-color: rgb(241, 243, 245);
+    padding-top: 60px;
+    padding-bottom: 60px;
+    color: #141516;
+}
+
+.footer-container {
+    padding-right: 48px;
+    padding-left: 48px;
+    width: 100%;
+}
+
+.footer-logo-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.footer-logo-img-container {
+    max-width: 60px;
+    margin-right: 16px;
+}
+
+.footer-logo-container img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.footer-columns-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px 150px;
+}
+
+.company-name {
+    font-size: 24px;
+}
+
+.footer-list {
+    list-style-type: none;
+}
+
+.footer-item h6 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.footer-list-item {
+    margin-bottom: 8px;
+}
+
+.footer-address-item {
+    margin-bottom: 8px;
+}
+
+.footer-boilerplate {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.footer-boilerplate-img-container {
+    max-width: 60px;
+    margin-top: 16px;
+}
+
+.footer-boilerplate-img-container img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.footer-boilerplate-text {
+    font-size: 11px;
+    margin-top: 16px;
+    line-height: 2;
+}
+
+.footer-socials {
+    display: flex;
+    justify-content: right;
+    margin-top: 16px;
+    width: 100%;
+    font-size: 24px;
+}
+
+.footer-socials i:first-of-type {
+    margin-right: 16px;
+}
+
+.footer-socials i:nth-of-type(2) {
+    margin-right: 16px;
+}
+
+.footer-tags {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    width: 100%;
+    font-size: 16px;
+}
+
+@media screen and (max-width: 768px) {
+    .footer-columns-container {
+        grid-template-columns: 1fr;
+        gap: 30px 30px;
+    }
+
+    .footer-socials {
+        justify-content: left;
+    }
+
+    .footer-tags {
+        flex-direction: column;
+        align-items: left;
+    }
+
+    .footer-tags div:first-of-type {
+        margin-bottom: 16px;
+    }
+}

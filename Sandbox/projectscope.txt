@@ -1,0 +1,13 @@
+https://rmluxurygroup.com/
+
+primary color: #162636 (dark navy blue)
+black color: #141516;
+black 75%: rgba(20, 21, 22, .75)
+black 50%: rgba(20, 21, 22, .5);
+black 25%: rgba(20, 21, 22, .25)
+black 10%: rgba(20, 21, 22, .1)
+black 5%: rgba(20, 21, 22, .05)
+
+white color: rgb(241, 243, 245)
+
+

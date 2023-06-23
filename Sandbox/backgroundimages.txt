@@ -1,0 +1,9 @@
+1. wrap content in a container
+2. set max-width to 960px 
+3. set margin left auto
+4. set margin right auto
+
+above code can be used to keep content displaying well
+
+- can use equal padding on top and bottom to center text
+- set background image of hero section using background-image: url("./imagepath")

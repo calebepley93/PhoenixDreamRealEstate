@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./heroredo.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+</head>
+<body>
+    <header class="header-container-centered">
+        <div class="centered-wrapper">
+                <div class="menu-hamburger-wrapper">
+                    <div class="hamburger-menu" id="hamburger-menu">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
+                    <p class="menu">Menu</p>
+                </div>
+                <div class="header-image-wrapper">
+                    <img src="./whitetransparent.webp" alt="logo">
+                </div>
+            <div class="ghostDiv"><span class="headerNumber">(555) 123 4567</span></div>
+        </div>
+    </header>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image:url('./heroimage1.png')">
+                <div class="slide-content">
+                    <span class="welcome">Welcome To</span>
+                    <h1 class="titleClass">Phoenix Dream Realty</h1>
+                    <a href="#"><button class="header-button-class">View Listings</button></a>
+                </div>
+            </div>
+            <div class="swiper-slide" style="background-image:url('./heroimage2.png')">
+                <div class="slide-content">
+                    <span class="welcome">Welcome To</span>
+                    <h1 class="titleClass">Phoenix Dream Realty</h1>
+                    <a href="#"><button class="header-button-class">View Listings</button></a>
+                </div>
+            </div>
+            <div class="swiper-slide" style="background-image:url('./heroimage3.png')">
+                <div class="slide-content">
+                    <span class="welcome">Welcome To</span>
+                    <h1 class="titleClass">Phoenix Dream Realty</h1>
+                    <a href="#"><button class="header-button-class">View Listings</button></a>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            var swiper = new Swiper('.swiper-container', {
+              effect: 'fade',
+              speed: 1000,
+              navigation: {
+                  nextEl: '.swiper-button-next',
+                  prevEl: '.swiper-button-prev',
+              },
+              autoplay: {
+                  delay: 3000,
+                  disableOnInteraction: false,
+              },
+            });
+          });
+    </script>
+</body>
+</html>

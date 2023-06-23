@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./Sandbox/profilesection.css">
+    <link rel="stylesheet" href="./Sandbox/featuredproperties.css">
+    <link rel="stylesheet" href="./Sandbox/media.css">
+    <link rel="stylesheet" href="./Sandbox/workwith.css">
+    <link rel="stylesheet" href="./Sandbox/footer.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header-container-centered">
+            <div class="centered-wrapper">
+                    <div class="menu-hamburger-wrapper">
+                        <div class="hamburger-menu" id="hamburger-menu">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
+                        <p class="menu">Menu</p>
+                    </div>
+                    <div class="header-image-wrapper">
+                        <img src="./Imgs/companyLogo.webp" alt="logo">
+                    </div>
+                    <span class="headerNumber">(555) 123 4567</span>
+            </div>
+        </header>
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image:url('./Imgs/heroimage1.png')">
+                <div class="bottom-overlay-content">
+                    <div class="centered-container">
+                        <div class="welcome">Welcome To</div>
+                        <h1 class="titleClass">Phoenix Dream Realty</h1>
+                        <a href="#"><button class="header-button-class">View Listings</button></a>
+                    </div>
+                    <div class="contactContainer">
+                        <a href=""><i class="fa fa-envelope"></i></a>
+                        <a href=""><i class="fa fa-phone"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide" style="background-image:url('./Imgs/heroimage2.png')">
+                <div class="bottom-overlay-content">
+                    <div class="centered-container">
+                        <div class="welcome">Welcome To</div>
+                        <h1 class="titleClass">Phoenix Dream Realty</h1>
+                        <a href="#"><button class="header-button-class">View Listings</button></a>
+                    </div>
+                    <div class="contactContainer">
+                        <a href=""><i class="fa fa-envelope"></i></a>
+                        <a href=""><i class="fa fa-phone"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide" style="background-image:url('./Imgs/heroimage3.png')">
+                <div class="bottom-overlay-content">
+                    <div class="centered-container">
+                        <div class="welcome">Welcome To</div>
+                        <h1 class="titleClass">Phoenix Dream Realty</h1>
+                        <a href="#"><button class="header-button-class">View Listings</button></a>
+                    </div>
+                    <div class="contactContainer">
+                        <a href=""><i class="fa fa-envelope"></i></a>
+                        <a href=""><i class="fa fa-phone"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+    </div>
+    <section class="about">
+        <div class="padding-container">
+            <div class="profile-image-container">
+                <img src="./Imgs/linkedin.png" alt="profilephoto">
+            </div>
+            <div class="profile-text-container">
+                <h2 class="profile-header">Meet Stan</h2>
+                <p class="profile-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam aut ex consequuntur iure molestias aperiam ut laboriosam, nobis facere. Voluptatem molestiae enim consequatur reprehenderit atque numquam dolore quis fugit impedit. Nemo dolorum corporis doloribus voluptatem sit nulla, aut nam fuga. Culpa doloremque eos natus architecto autem iusto fuga asperiores inventore.
+                </p>
+                <p class="profile-text">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit cum ex eum consequuntur soluta, amet corporis, saepe quaerat magnam sunt molestiae nesciunt expedita ab. Nihil cupiditate labore excepturi enim, libero deleniti, accusantium, eligendi ab quae incidunt harum quidem odio quia?
+                </p>
+                <a href="#" class="learn-more-button">
+                    <button>Learn More</button>
+                </a>
+            </div>
+        </div>
+    </section>
+    <div id="app">
+        <section class="featuredproperties" v-for="(property, index) in properties" :key="index">
+                <transition name="fade">
+                <div class="featuredPropertiesContentContainer" v-show="currentProperty === index">
+                    <div class="featured-img-background" :style="{ backgroundImage: 'url(' + property.image + ')' }"></div>
+                    <div class="property-details">
+                        <div class="featured-properties-head">
+                            <p>Featured Properties</p>
+                        </div>
+                        <h2 class="property-name">{{ property.address }}</h2>
+                        <span class="property-price">{{ property.price }}</span>
+                        <ul class="property-features">
+                            <li class="propertyFeature">{{ property.beds }}</li>
+                            <li class="propertyFeature">{{ property.baths }}</li>
+                            <li class="propertyFeature">{{ property.area }}</li>
+                        </ul>
+                    </div>
+                </div>
+                </transition>
+            </section>
+            <div class="active-listing-numbers">
+                <div class="button-div">
+                    <a href="" class="view-listing">
+                        <button class="listingbutton">View Listing</button>
+                    </a>
+                    <a href="" class="view-all">
+                        <button class="viewbutton">View All</button>
+                    </a>
+                </div>
+                <div class="activeNumbers">
+                    <div class="number" v-for="(property, index) in properties" :key="'number-' + index" :class="{ dimmed: index !== currentProperty }" @click="currentProperty = index">{{ index + 1 }}</div>
+                </div>
+            </div>
+    </div>
+    <section class="media">
+        <div class="media-content-container">
+            <h2 class="media-header">Blog</h2>
+            <div class="media-box-container">
+                <div class="media-box">
+                    <div class="media-box-content">
+                        <div class="media-img-container">
+                            <img src="./Imgs/profileimage1.png" alt="blogimage">
+                        </div>
+                        <h3 class="blog-title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta ab molestias alias!</h3>
+                        <span class="read-more">Read More</span>
+                    </div>
+                </div>
+                <div class="media-box">
+                    <div class="media-box-content">
+                        <div class="media-img-container">
+                            <img src="./Imgs/profileimage2.png" alt="blogimage">
+                        </div>
+                        <h3 class="blog-title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur?</h3>
+                        <span class="read-more">Read More</span>
+                    </div>
+                </div>
+                <div class="media-box">
+                    <div class="media-box-content">
+                        <div class="media-img-container">
+                            <img src="./Imgs/profileimage3.png" alt="blogimage">
+                        </div>
+                        <h3 class="blog-title">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem, ipsum dolor.</h3>
+                        <span class="read-more">Read more</span>
+                    </div>
+                </div>
+            </div>
+            <a href="">
+                <button class="read-more-button">View All</button>
+            </a>
+        </div>
+    </section>
+    <section class="workwith">
+        <div class="workwithcontent">
+            <h2>Work With Stan</h2>
+            <div class="">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque quas culpa iusto? Quis perspiciatis officia error, earum fugit, sunt laboriosam ex reiciendis perferendis velit consequuntur itaque fugiat excepturi quasi totam?</div>
+            <a href=""><button class="connect-button">Let's Connect</button></a>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo-container">
+                <div class="footer-logo-img-container">
+                    <img src="./Sandbox/companyLogo.webp" alt="logo">
+                </div>
+                <div class="company-name">Phoenix Dream Realty</div>
+            </div>
+            <div class="footer-columns-container">
+                <div class="footer-item">
+                    <h6 class="sitemap">Sitemap</h6>
+                    <ul class="footer-list">
+                        <li class="footer-list-item">Home</li>
+                        <li class="footer-list-item">Meet Stan</li>
+                        <li class="footer-list-item">Featured Properties</li>
+                        <li class="footer-list-item">Listings</li>
+                        <li class="footer-list-item">Blog</li>
+                        <li class="footer-list-item">Let's Connect</li>
+                    </ul>
+                </div>
+                <div class="footer-item">
+                    <h6 class="footer-contact">Contact</h6>
+                    <p class="footer-list-item">Stan Goodman</p>
+                    <p class="footer-list-item">Phone: 555-555-5555</p>
+                    <p class="footer-list-item">Email: phoenixdream@yahoo.com</p>
+                </div>
+                <div class="footer-item">
+                    <h6 class="footer-address">Address</h6>
+                    <p class="footer-address-item">123 Rainbow Rd</p>
+                    <p class="footer-address-item">Phoenix, AZ 85001</p>
+                </div>
+            </div>
+            <div class="footer-boilerplate">
+                <p class="footer-boilerplate-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae harum, officiis ipsa non ea maxime in laboriosam cumque dolorum ipsum eum vel itaque. Vel totam, vitae cumque, magnam sapiente similique, aut eaque aliquam ipsam corrupti beatae. Ipsam perspiciatis aliquid explicabo beatae non in unde veritatis labore rerum quos alias voluptatem optio, corrupti id illo ipsum vel cum? Excepturi deleniti rerum, temporibus modi at a eius voluptatibus labore nam doloremque animi facilis culpa voluptates incidunt nisi magnam, dignissimos accusamus inventore minima natus et? Repellat aut veritatis illo quam dolorem perferendis laudantium ratione ipsum sint, tempore aspernatur quaerat explicabo porro non? Iste possimus at sunt. Quae laudantium molestias soluta expedita sunt laborum accusantium, obcaecati fuga totam iusto vel quos, voluptas corrupti dolorem nam? Modi voluptates non repellat quam cumque hic porro? Quisquam sint mollitia eum voluptas impedit et commodi laborum nostrum aliquam.</p>
+                <div class="footer-boilerplate-img-container">
+                    <img src="./Sandbox/officeofhousing.jpg" alt="housingauthoritylogo">
+                </div>
+            </div>
+            <div class="footer-socials">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-youtube"></i>
+            </div>
+            <div class="footer-tags">
+                <div class="footer-tag-text">Website designed and developed by Caleb Epley</div>
+                <div class="footer-tag-text">&copy; 2023 Phoenix Dream Realty</div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            var swiper = new Swiper('.swiper-container', {
+              effect: 'fade',
+              speed: 1000,
+              navigation: {
+                  nextEl: '.swiper-button-next',
+                  prevEl: '.swiper-button-prev',
+              },
+              autoplay: {
+                  delay: 3000,
+                  disableOnInteraction: false,
+              },
+            });
+          });
+
+          const app = Vue.createApp({
+            data() {
+                return {
+                    currentProperty: 0,
+                    properties: [
+                        { address: '123 Rainbow Road, Phoenix, AZ, 12345', price: '$2,950,000', beds: '6 beds', baths: '3 baths', area: '20,002 sq ft', image: './Imgs/featuredproperty.png' },
+                        { address: '456 Sun Street, Phoenix, AZ, 12345', price: '$3,500,000', beds: '4 beds', baths: '2 baths', area: '10,000 sq ft', image: './Imgs/featuredproperty2.png' },
+                        { address: '789 Moon Lane, Phoenix, AZ, 12345', price: '$4,200,000', beds: '5 beds', baths: '4 baths', area: '30,000 sq ft', image: './Imgs/featuredproperty3.png' },
+                    ]
+                }
+            },
+        });
+    
+        app.mount('#app');
+    </script>
+</body>
+</html>

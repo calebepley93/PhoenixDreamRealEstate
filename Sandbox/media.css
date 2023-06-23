@@ -1,0 +1,136 @@
+
+
+.media {
+    background-color: rgb(241, 243, 245);
+    width: 100%;
+    padding: 60px 48px;
+    color: #141516;
+}
+
+.media-content-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    width: 100%;
+}
+
+.media-box-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+    width: 100%;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.media-box {
+    display: flex; 
+    flex-direction: column; 
+}
+
+.media-box-content {
+    background-color: white;
+    margin-bottom: 8px;
+    min-height: 0; /* Add this property */
+    overflow: hidden; /* Add this property */
+}
+
+.media-box:first-of-type {
+    margin-right: 24px;
+}
+
+.media-box:nth-of-type(2) {
+    margin-right: 24px;
+}
+
+.media-box-content {
+    background-color: white;
+    margin-bottom: 8px;
+}
+
+.media-img-container {
+    width: 100%;
+}
+
+.media-img-container img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.blog-title {
+    margin-top: 24px;
+    margin-bottom: 8px;
+}
+
+.media-header {
+    margin-bottom: 32px;
+    font-size: 36px;
+    justify-self: center;
+}
+
+.blog-title {   
+    margin-bottom: 24px;
+}
+
+.read-more-button {
+    padding: 8px 56px;
+    color: rgb(214, 223, 233);
+    background-color: #162636;
+    border: 1px solid rgb(214, 223, 233);
+    border-radius: 6px;
+}
+
+.media-content-container a {
+    justify-self: center;
+}
+
+.read-more-button:hover {
+    color: #141516;
+    background-color: transparent;
+    border: 1px solid #141516;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 951px) {
+
+    .media-box-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .media-box:first-of-type {
+        margin-right: 0;
+        margin-bottom: 16px;
+    }
+
+    .media-box:nth-of-type(2) {
+        margin-right: 0;
+        margin-bottom: 16px;
+    }
+}
+
+@media screen and (min-width: 650px) and (max-width: 949px) {
+    .media-box:first-of-type {
+        margin-right: 16px;
+        margin-bottom: 16px;
+    }
+
+    .media {
+        padding: 48px 32px;
+    }
+
+    .media-box-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+@media screen and (max-width: 649px) {
+    .media {
+        padding: 48px 24px;
+    }
+}

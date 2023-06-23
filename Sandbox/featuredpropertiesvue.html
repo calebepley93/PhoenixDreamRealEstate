@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./featuredproperties.css">
+</head>
+<body>
+    <div id="app">
+        <section class="featuredproperties" v-for="(property, index) in properties" :key="index">
+                <transition name="fade">
+                <div class="featuredPropertiesContentContainer" v-show="currentProperty === index">
+                    
+                    <div class="featured-img-background" :style="{ backgroundImage: 'url(' + property.image + ')' }"></div>
+                    <div class="property-details">
+                 
+                    <div class="featured-properties-head">
+                        <p>Featured Properties</p>
+                    </div>
+                    <h2 class="property-name">{{ property.address }}</h2>
+                    <span class="property-price">{{ property.price }}</span>
+                    <ul class="property-features">
+                        <li class="propertyFeature">{{ property.beds }}</li>
+                        <li class="propertyFeature">{{ property.baths }}</li>
+                        <li class="propertyFeature">{{ property.area }}</li>
+                    </ul>
+                </div>
+                </div>
+                </transition>
+            </section>
+            <div class="active-listing-numbers">
+                <div class="button-div">
+                    <a href="" class="view-listing">
+                        <button class="listingbutton">View Listing</button>
+                    </a>
+                    <a href="" class="view-all">
+                        <button class="viewbutton">View All</button>
+                    </a>
+                </div>
+                <div class="activeNumbers">
+                    <div class="number" v-for="(property, index) in properties" :key="'number-' + index" :class="{ dimmed: index !== currentProperty }" @click="currentProperty = index">{{ index + 1 }}</div>
+                </div>
+            </div>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+<script>
+    const app = Vue.createApp({
+        data() {
+            return {
+                currentProperty: 0,
+                properties: [
+                    { address: '123 Rainbow Road, Phoenix, AZ, 12345', price: '$2,950,000', beds: '6 beds', baths: '3 baths', area: '20,002 sq ft', image: './featuredproperty.png' },
+                    { address: '456 Sun Street, Phoenix, AZ, 12345', price: '$3,500,000', beds: '4 beds', baths: '2 baths', area: '10,000 sq ft', image: './featuredproperty2.png' },
+                    { address: '789 Moon Lane, Phoenix, AZ, 12345', price: '$4,200,000', beds: '5 beds', baths: '4 baths', area: '30,000 sq ft', image: './featuredproperty3.png' },
+                ]
+            }
+        },
+    });
+
+    app.mount('#app');
+</script>
+</body>
+</html>

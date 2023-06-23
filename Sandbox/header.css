@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f2f2f2;
+}
+
+.centered-wrapper {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-between;
+    cursor: pointer;
+    background-color: transparent;
+    position: relative;
+  }
+  
+  .hamburger-menu:hover {
+    cursor: pointer;
+  }
+  
+  .hamburger-menu div {
+    width: 5vw;
+    height: 3px;
+    background-color: red;
+    border-radius: 1px;
+    margin: 2px;
+    transition: 0.2s;
+    min-width: 20px;
+    min-height: 3px;
+    /* margin-right: 3vw; */
+  }
+
+  .header-image-wrapper {
+    max-width: 100px;
+  }
+
+  .header-image-wrapper img {
+    width: 100%;
+    height: auto;
+  }
+
+  .leftdivider {
+    flex-basis: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .ghostDiv {
+    flex-basis: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .menu-hamburger-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  
