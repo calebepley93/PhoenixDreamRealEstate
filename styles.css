@@ -283,7 +283,12 @@ body {
 
 
 
-
+@media screen and (max-width: 549px) {
+  .bottom-overlay-content {
+    padding-top: 35%;
+    padding-bottom: 35%;
+  }
+}
 
 
 @media screen and (min-width: 550px) and (max-width: 649px) {
@@ -368,17 +373,17 @@ body {
 }
 
 
-@media screen and (max-height: 499px) {
-  .bottom-overlay-content {
-    padding-top: 16%;
-    padding-bottom: 16%;
-  }
-}
-
-
-@media screen and (max-height: 680px) and (min-height: 500px) {
+ @media screen and (max-height: 499px) {
   .bottom-overlay-content {
     padding-top: 20%;
     padding-bottom: 20%;
   }
 }
+
+
+@media screen and (max-height: 650px) and (min-height: 500px) {
+  .bottom-overlay-content {
+    padding-top: 20%;
+    padding-bottom: 20%;
+  }
+} 

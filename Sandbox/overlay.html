@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./overlay.css">
+</head>
+<body>
+    <div class="hamburger-menu" id="hamburger-menu">
+        <div class="hamburger-menu__line"></div>
+        <div class="hamburger-menu__line"></div>
+        <div class="hamburger-menu__line"></div>
+    </div>
+    <nav class="overlay-section" id="overlay-section">
+        <ul class="overlay-nav-list">
+            <li class="overlay-nav-list-item"><a href="#" class="link"><span>Home</span></a></li>
+            <li class="overlay-nav-list-item"><a href="#" class="link"><span>Meet Stan</span></a></li>
+            <li class="overlay-nav-list-item"><a href="#" class="link"><span>Properties</span></a></li>
+            <li class="overlay-nav-list-item"><a href="#" class="link"><span>Blog</span></a></li>
+            <li class="overlay-nav-list-item"><a href="#" class="link"><span>Let's Connect</span></a></li>
+        </ul>
+    </nav>
+</body>
+<script>
+
+    document.getElementById('hamburger-menu').addEventListener('click', function() {
+        document.getElementById('overlay-section').style.opacity = '1';
+    });
+    
+    document.querySelector('.overlay-section').addEventListener('click', function() {
+        document.getElementById('overlay-section').style.opacity = '0';
+    });
+
+    const menuBtn = document.getElementById('hamburger-menu');
+const overlay = document.getElementById('overlay-section');
+let menuOpen = false;
+
+menuBtn.addEventListener('click', () => {
+    if(!menuOpen) {
+        menuBtn.classList.add('open');
+        overlay.style.opacity = '1';
+        menuOpen = true;
+    } else {
+        menuBtn.classList.remove('open');
+        overlay.style.opacity = '0';
+        menuOpen = false;
+    }
+});
+
+overlay.addEventListener('click', (event) => {
+    if (!menuBtn.contains(event.target)) {
+        menuBtn.classList.remove('open');
+        overlay.style.opacity = '0';
+        menuOpen = false;
+    }
+});
+
+</script>
+
+</html>
