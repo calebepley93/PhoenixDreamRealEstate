@@ -223,8 +223,8 @@ body {
 
 .bottom-overlay-content {
   width: 100%;
-  padding-top: 280px;
-  padding-bottom: 280px;
+  padding-top: 35vh;
+  padding-bottom: 35vh;
 }
 
 .centered-container {
@@ -285,8 +285,8 @@ body {
 
 @media screen and (max-width: 549px) {
   .bottom-overlay-content {
-    padding-top: 35%;
-    padding-bottom: 35%;
+    padding-top: 35vh;
+    padding-bottom: 35vh;
   }
 }
 
@@ -375,15 +375,15 @@ body {
 
  @media screen and (max-height: 499px) {
   .bottom-overlay-content {
-    padding-top: 20%;
-    padding-bottom: 20%;
+    padding-top: 35vh;
+    padding-bottom: 35vh;
   }
 }
 
 
 @media screen and (max-height: 650px) and (min-height: 500px) {
   .bottom-overlay-content {
-    padding-top: 20%;
-    padding-bottom: 20%;
+    padding-top: 35vh;
+    padding-bottom: 35vh;
   }
 } 
